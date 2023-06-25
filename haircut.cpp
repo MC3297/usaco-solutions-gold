@@ -54,7 +54,7 @@ struct SegTree {
         return res;
     }
 };
-
+//for each inversion keep track of the RHS smaller term, when larger becomes equal then inversion doesnt hold anymore
 void solve() {
     freopen("haircut.in", "r", stdin);
     freopen("haircut.out", "w", stdout);
