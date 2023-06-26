@@ -40,7 +40,7 @@ struct SegTree {
         for (int i = n - 1; i > 0; --i) t[i] = f(t[i<<1], t[i<<1|1]);
     }
     void modify(int p, int value) {  // set value at position p
-        for (t[p += n] = value; p > 1; p >>= 1) t[p>>1] = f(t[p], t[p^1]);
+        for (t[p = n] = value; p > 1; p >>= 1) t[p>>1] = f(t[p], t[p^1]);
     }
     void update(int p, int value) {  // update value at position p
         for (t[p += n] += value; p > 1; p >>= 1) t[p>>1] = f(t[p], t[p^1]);
